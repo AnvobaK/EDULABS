@@ -1,5 +1,4 @@
 .nav-header {
-    max-width: 1920px;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.3);
@@ -7,11 +6,15 @@
     display: flex;
     min-height: 76px;
     width: 100%;
-    padding: 8px 240px;
+    padding: 8px 20px;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
 }
 
 .nav-container {
-    max-width: 1440px;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
@@ -26,26 +29,12 @@
     flex: 1;
 }
 
-.logo-section {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    width: 144px;
-}
-
-.logo-wrapper {
-    width: 100%;
-    padding-top: 10px;
-    flex: 1;
-}
-
 .logo-link {
     display: flex;
-    width: 100%;
+    width: 144px;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
 }
 
 .logo-image {
@@ -59,25 +48,16 @@
 }
 
 .nav-buttons {
-    align-self: stretch;
     display: flex;
-    margin: auto;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: center;
-    width: 160px;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-button {
     border: none;
     background: none;
     border-radius: 8px;
-    display: flex;
-    width: 100%;
     padding: 21px 30px;
-    align-items: center;
-    overflow: hidden;
-    justify-content: start;
     font-family:
         Arial,
         -apple-system,
@@ -85,40 +65,33 @@
         Helvetica,
         sans-serif;
     font-size: 15px;
-    color: #000;
     font-weight: 700;
+    color: #000;
     text-align: center;
     line-height: 1;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.button-text {
-    align-self: stretch;
-    margin: auto;
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .cta-button {
-    align-items: center;
-    border-radius: 29px;
     background-color: #0369b8;
+    border-radius: 29px;
     padding: 12px 30px;
-    gap: 7px;
-    color: #ffffff;
+    color: #fff;
 }
 
-.button-icon {
-    align-self: stretch;
-    margin: auto;
-    font-family:
-        "Font Awesome 5 Free",
-        -apple-system,
-        Roboto,
-        Helvetica,
-        sans-serif;
-    font-size: 16px;
-    font-weight: 900;
+.cta-button:hover {
+    background-color: #0258a1;
+}
+
+.button-text,
+.cta-text {
+    display: block;
     white-space: nowrap;
-    line-height: 1;
 }
 
 @media (max-width: 991px) {
@@ -137,7 +110,12 @@
         padding-right: 20px;
     }
 
-    .button-icon {
+    .cta-button {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .button-text {
         white-space: initial;
     }
 }
