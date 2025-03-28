@@ -1,0 +1,520 @@
+.navigation-bar {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    width: 100%;
+    padding: 15px 5px 15px 15px;
+    align-items: center;
+    gap: 40px 100px;
+    font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    flex-wrap: wrap;
+}
+
+.logo {
+    aspect-ratio: 3.13;
+    object-fit: contain;
+    object-position: center;
+    width: 144px;
+    align-self: start;
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+.nav-link {
+    align-self: stretch;
+    margin: auto 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-educators {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 90px;
+}
+
+.nav-families {
+    flex-shrink: 0;
+}
+
+.nav-resources {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 108px;
+}
+
+.cta-button {
+    border: none;
+    border-radius: 29px;
+    background-color: rgba(3, 105, 184, 1);
+    align-self: start;
+    padding: 12px 30px;
+    color: rgba(255, 255, 255, 1);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .navigation-bar {
+        max-width: 100%;
+    }
+
+    .cta-button {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.math-guides {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 290px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.content-wrapper {
+    width: 100%;
+    padding: 10px;
+}
+
+.header-content {
+    display: flex;
+    width: 100%;
+    max-width: 860px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.title-container {
+    width: 100%;
+    flex: 1;
+}
+
+.main-title {
+    width: 100%;
+    padding: 2px 281px 3px;
+    font-size: 42px;
+    color: #024170;
+    font-weight: 900;
+}
+
+.description-section {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 860px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.description-wrapper {
+    width: 100%;
+    padding: 0 20px;
+    flex: 1;
+}
+
+.subtitle {
+    width: 100%;
+    padding: 1px 13px;
+    font-size: 23px;
+    color: #000;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .math-guides {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .header-content {
+        max-width: 100%;
+    }
+
+    .title-container {
+        max-width: 100%;
+    }
+
+    .main-title {
+        max-width: 100%;
+        padding: 2px 20px 3px;
+    }
+
+    .description-section {
+        max-width: 100%;
+    }
+
+    .description-wrapper {
+        max-width: 100%;
+    }
+
+    .subtitle {
+        max-width: 100%;
+    }
+}
+
+.math-guides-container {
+    margin-top: 59px;
+    width: 100%;
+    padding: 0 35px;
+    font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+}
+
+.guides-header {
+    margin-bottom: 23px;
+}
+
+.header-content {
+    display: flex;
+    gap: 20px;
+}
+
+.header-left {
+    width: 29%;
+    display: flex;
+    margin-top: 9px;
+    align-items: flex-start;
+    gap: 46px;
+}
+
+.header-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    width: 26px;
+}
+
+.header-title {
+    margin-top: 18px;
+    font-size: 32px;
+    color: rgb(2, 65, 112);
+    font-weight: 400;
+}
+
+.header-description {
+    width: 71%;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(0, 0, 0);
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 0 10px;
+}
+
+.guide-card {
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    border: 4px solid rgb(5, 132, 230);
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 21px;
+    margin: 18px 0;
+    color: rgb(0, 0, 0);
+}
+
+.read-more {
+    color: rgb(0, 96, 122);
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.standalone-card {
+    margin: 20px 10px;
+    width: calc(25% - 15px);
+}
+
+@media (max-width: 991px) {
+    .math-guides-container {
+        padding: 0 20px;
+        margin-top: 40px;
+    }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-left {
+        width: 100%;
+    }
+
+    .header-description {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .guides-grid {
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+
+    .guide-card {
+        margin-top: 19px;
+        padding: 20px;
+    }
+
+    .standalone-card {
+        width: 100%;
+        margin: 19px 0 0 0;
+    }
+}
+
+.grades-section {
+    background-color: rgba(159, 231, 195, 1);
+    display: flex;
+    margin-top: 58px;
+    margin-bottom: -161px;
+    width: 100%;
+    padding: 58px 70px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grades-header {
+    display: flex;
+    width: 185px;
+    max-width: 100%;
+    align-items: start;
+    gap: 20px;
+    font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+    font-size: 32px;
+    color: rgba(2, 65, 112, 1);
+    font-weight: 400;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.grades-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 26px;
+    flex-shrink: 0;
+}
+
+.grades-title {
+    margin-top: 17px;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.grades-intro {
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 43px;
+    width: 883px;
+}
+
+.grades-subtitle {
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    z-index: 10;
+    margin-top: -6px;
+    margin-left: 16px;
+}
+
+.grade-cards-grid {
+    align-self: stretch;
+    display: flex;
+    margin-top: 44px;
+    align-items: stretch;
+    gap: 20px;
+    font-family:
+        Inter,
+        -apple-system,
+        Roboto,
+        Helvetica,
+        sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.grade-card {
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 19px 32px;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.grade-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.kindergarten {
+    color: rgba(236, 198, 56, 1);
+}
+
+.first-grade {
+    color: rgba(4, 106, 184, 1);
+}
+
+.second-grade {
+    color: rgba(36, 170, 206, 1);
+}
+
+.third-grade {
+    color: rgba(199, 102, 89, 1);
+}
+
+.fourth-grade {
+    color: rgba(126, 85, 220, 1);
+}
+
+.fifth-grade {
+    color: rgba(130, 184, 4, 1);
+}
+
+.sixth-grade {
+    color: rgba(178, 42, 97, 1);
+}
+
+.seventh-grade {
+    color: rgba(80, 67, 186, 1);
+}
+
+.eighth-grade {
+    color: rgba(18, 20, 135, 1);
+}
+
+.grade-description {
+    color: rgba(0, 0, 0, 1);
+    line-height: 21px;
+    margin: 29px 0;
+}
+
+.view-lessons-link {
+    color: rgba(0, 96, 122, 1);
+    text-decoration: none;
+}
+
+.middle-grades-grid {
+    margin-top: 20px;
+    width: 640px;
+    max-width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.middle-grades-column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 33%;
+}
+
+@media (max-width: 991px) {
+    .grades-section {
+        max-width: 100%;
+        margin-bottom: 10px;
+        padding: 40px 20px;
+        margin-top: 40px;
+    }
+
+    .grades-header {
+        white-space: initial;
+    }
+
+    .grades-intro {
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    .grades-subtitle {
+        max-width: 100%;
+    }
+
+    .grade-cards-grid {
+        margin-top: 40px;
+    }
+
+    .grade-card {
+        padding: 19px 20px;
+    }
+
+    .middle-grades-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .middle-grades-column {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .middle-grades-column:first-child {
+        margin-top: 0;
+    }
+}
+
