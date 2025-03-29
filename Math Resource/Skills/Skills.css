@@ -63,7 +63,6 @@ img {
   width: 100%;
   max-width: 144px;
 }
-
 .nav-buttons {
   display: flex;
   align-items: center;
@@ -83,12 +82,14 @@ img {
   text-align: center;
   line-height: 1;
   cursor: pointer;
-  transition: background-color 0.2s;
-  white-space: nowrap;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .nav-button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(3, 105, 184, 0.1);
+  color: #0369b8;
 }
 
 .cta-button {
@@ -100,11 +101,205 @@ img {
 
 .cta-button:hover {
   background-color: #0258a1;
+  color: #fff;
 }
 
 .button-text,
 .cta-text {
   display: block;
+  white-space: nowrap;
+}
+
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  position: relative;
+  padding-right: 30px; /* Space for the dropdown arrow */
+}
+
+.dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle:hover::after {
+  border-top-color: #0369b8;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  overflow: hidden;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 8px 0;
+  margin-top: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-menu.show {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(3, 105, 184, 0.08);
+  color: #0369b8;
+  padding-left: 25px;
+}
+
+.dropdown-menu a:hover::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #0369b8;
+}
+
+.dropdown-menu a:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Show dropdown on hover for desktop */
+@media (min-width: 992px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .dropdown:hover .dropdown-toggle::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 991px) {
+  .nav-header {
+    padding: 8px 15px;
+  }
+
+  .nav-container {
+    gap: 20px;
+  }
+
+  .nav-buttons {
+    gap: 10px;
+  }
+
+  .nav-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+  }
+
+  .button-text {
+    white-space: normal;
+  }
+
+  /* Dropdown adjustments for mobile */
+  .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  body {
+    padding-top: 120px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 10px;
+  }
+
+  .nav-button,
+  .dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 12px 15px;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    margin-top: 0;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .dropdown-menu.show {
+    max-height: 300px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-menu a {
+    padding: 12px 25px;
+  }
+
+  .dropdown-toggle::after {
+    right: 15px;
+  }
 }
 
 /* Math Skills Section */
