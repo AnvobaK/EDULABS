@@ -668,269 +668,89 @@ img {
   text-decoration: underline;
 }
 
-/* Footer */
-.footer-background {
-  background-color: #024170;
-  display: flex;
-  width: 100%;
-  padding: 40px 20px 0;
-  flex-direction: column;
-  align-items: center;
+/* Footer Section*/
+.site-footer {
+  padding: 40px 360px 0;
+  background-color: #05262d;
 }
 
 .footer-container {
-  width: 100%;
-  max-width: 1200px;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
   border-bottom: 2px solid #4d6d84;
-  padding: 0 0 40px;
 }
 
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.footer-section {
+.company-info {
   flex: 1;
-  min-width: 200px;
 }
 
-/* Brand Section Styles */
-.brand-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo-container {
+.footer-logo {
   width: 200px;
-  max-width: 100%;
+  height: auto;
   margin-bottom: 20px;
 }
 
-.brand-info {
-  color: #ffffff;
-}
-
-.brand-text {
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
+.company-description {
+  font-family: Arial, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  line-height: 1.6;
+  color: #fff;
   margin-bottom: 20px;
 }
 
 .support-contact {
-  display: flex;
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 16px;
-  line-height: 2;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.support-label {
-  font-weight: 400;
+  color: #fff;
 }
 
 .support-phone {
-  font-weight: 700;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
+  font-weight: 700;
 }
 
-.support-phone:hover {
-  text-decoration: underline;
+.quick-links {
+  flex: 1;
 }
 
-/* Navigation Sections Styles */
-.footer-heading {
-  font-family: Roboto, -apple-system, Helvetica, sans-serif;
-  color: #ffffff;
+.links-heading {
+  font-family: Roboto, sans-serif;
   font-size: 18px;
   font-weight: 700;
+  color: #fff;
   text-decoration: underline;
   margin-bottom: 20px;
 }
 
-.footer-list {
+.links-list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.footer-list li {
-  margin-bottom: 10px;
-}
-
-.footer-link {
-  font-family: Roboto, -apple-system, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  font-weight: 700;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-link:hover {
+.links-list :hover {
   text-decoration: underline;
+  color: #ffe44b;
 }
 
-/* App Section Styles */
-.app-description {
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #ffffff;
+.link-item {
+  color: #fff;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.app-store-link {
-  display: inline-block;
-}
-
-.app-store-image {
-  width: 150px;
-  border-radius: 5px;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 1200px) {
-  .math-skills__content,
-  .skill-guides-container,
-  .grades-container {
+@media (max-width: 640px) {
+  .site-footer {
     padding: 20px;
   }
-}
 
-@media (max-width: 991px) {
-  .nav-container {
-    gap: 10px;
-  }
-
-  .nav-button {
-    padding: 10px 15px;
-  }
-
-  .math-skills__title {
-    font-size: 30px;
-  }
-
-  .math-skills__description {
-    font-size: 16px;
-  }
-
-  .math-skills__description br {
-    display: none;
-  }
-
-  .header-title {
-    font-size: 24px;
-  }
-
-  .header-description {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-container {
+  .footer-container {
     flex-direction: column;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  body {
-    padding-top: 120px;
-  }
-
-  .nav-buttons {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .math-skills__content {
-    flex-direction: column;
-  }
-
-  .math-skills__image-column {
-    order: -1; /* Show image first on mobile */
-  }
-
-  .math-skills__image {
-    border-radius: 0 144px 0 96px;
-  }
-
-  .skill-guides-header {
-    height: auto;
-    padding-bottom: 20px;
-  }
-
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo-wrapper {
-    margin-bottom: 10px;
-  }
-
-  .header-description {
-    padding-bottom: 0;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .footer-section {
-    width: 100%;
-  }
-}
-
-@media (max-width: 576px) {
-  .nav-header {
-    padding: 10px;
-  }
-
-  .nav-button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
-  .math-skills__title {
-    font-size: 26px;
-  }
-
-  .math-skills__description {
-    font-size: 15px;
-  }
-
-  .skills-row {
-    grid-template-columns: 1fr;
-  }
-
-  .grades-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grades-title {
-    font-size: 24px;
-  }
-
-  .description-text,
-  .description-subtext {
-    font-size: 14px;
-  }
-
-  .footer-heading {
-    font-size: 16px;
-  }
-
-  .footer-link,
-  .support-contact {
-    font-size: 14px;
+    text-align: center;
   }
 }
