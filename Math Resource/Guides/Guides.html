@@ -6,6 +6,22 @@
     <link rel="stylesheet" href="Guides.css" />
     <link rel="stylesheet" href="Footer.css" />
     <title>Math Guides</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+        const dropdownMenu = document.querySelector(".dropdown-menu");
+
+        dropdownToggle.addEventListener("click", function () {
+          dropdownMenu.classList.toggle("show");
+        });
+
+        window.addEventListener("click", function (e) {
+          if (!dropdownToggle.contains(e.target)) {
+            dropdownMenu.classList.remove("show");
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <nav class="nav-header">
