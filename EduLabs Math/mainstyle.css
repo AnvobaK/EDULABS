@@ -89,18 +89,18 @@ body {
 
 .nav-button:hover {
   background-color: rgba(3, 105, 184, 0.1);
-  color: #0369b8;
+  color: #0b5868;
 }
 
 .cta-button {
-  background-color: #0369b8;
+  background-color: #0b5868;
   border-radius: 29px;
   padding: 12px 30px;
   color: #fff;
 }
 
 .cta-button:hover {
-  background-color: #0258a1;
+  background-color: #0b5868;
   color: #fff;
 }
 
@@ -136,7 +136,7 @@ body {
 }
 
 .dropdown-toggle:hover::after {
-  border-top-color: #0369b8;
+  border-top-color: #0b5868;
 }
 
 .dropdown-menu {
@@ -177,7 +177,7 @@ body {
 
 .dropdown-menu a:hover {
   background-color: rgba(3, 105, 184, 0.08);
-  color: #0369b8;
+  color: #0b5868;
   padding-left: 25px;
 }
 
@@ -190,7 +190,7 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #0369b8;
+  background-color: #0b5868;
 }
 
 .dropdown-menu a:not(:last-child) {
@@ -305,8 +305,7 @@ body {
 /* Rest of your existing styles */
 .dreambox-section {
   padding: 100px 360px;
-  background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/26dd34ad77ed366a47b33df7e542eba63dbc504a")
-    lightgray;
+  background: url("/Assets/back-school-witch-school-supplies.jpg") lightgray center center;
   background-size: cover;
   position: relative;
 }
@@ -354,7 +353,7 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  background-color: #046ab8;
+  background-color: #a1e3d8;
 }
 
 .video-container {
@@ -472,7 +471,7 @@ body {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  background-color: #046ab8;
+  background-color: #a1e3d8;
 }
 
 @media (max-width: 991px) {
@@ -621,7 +620,7 @@ body {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  background-color: #046ab8;
+  background-color: #a1e3d8;
 }
 
 /* Grade Selection Component Styles */
@@ -724,5 +723,92 @@ body {
 @media (max-width: 640px) {
   .grade-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Section*/
+.site-footer {
+  padding: 40px 360px 0;
+  background-color: #05262d;
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #4d6d84;
+}
+
+.company-info {
+  flex: 1;
+}
+
+.footer-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.company-description {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.support-contact {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.support-phone {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.quick-links {
+  flex: 1;
+}
+
+.links-heading {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.links-list :hover {
+  text-decoration: underline;
+  color: #ffe44b;
+}
+
+.link-item {
+  color: #fff;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
 }
