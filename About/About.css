@@ -1,0 +1,380 @@
+/* About Page Styles */
+:root {
+  /* Color Theme */
+  --olive: #968445;
+  --dark-teal: #05262d;
+  --bright-yellow: #ffe44b;
+  --pale-yellow: #f6f09c;
+  --mint: #a1e3d8;
+  --teal: #0b5868;
+
+  /* Functional Colors */
+  --primary: var(--teal);
+  --primary-hover: #094857;
+  --primary-light: rgba(11, 88, 104, 0.1);
+  --secondary: var(--mint);
+  --accent: var(--bright-yellow);
+  --accent-light: var(--pale-yellow);
+  --dark: var(--dark-teal);
+  --text-dark: var(--dark-teal);
+  --text-light: #4a6269;
+  --background: #f8f9fa;
+  --white: #fff;
+  --border-radius: 8px;
+  --shadow: 0 4px 12px rgba(5, 38, 45, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.nav-button.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.about-header p {
+  font-size: 18px;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.about-section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--secondary);
+}
+
+.section-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-text h2 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.section-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.features-section {
+  text-align: center;
+  padding: 40px 0;
+  background-color: var(--primary-light);
+  border-radius: 12px;
+}
+
+.features-section h2 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.team-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.team-section h2 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.team-intro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--secondary);
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.member-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 3px solid var(--secondary);
+}
+
+.team-member h3 {
+  font-size: 18px;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.member-title {
+  font-size: 14px;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--secondary);
+  border-radius: 12px;
+}
+
+.contact-section h2 {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.contact-section > p {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.contact-item a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary-hover);
+}
+
+.about-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .about-section,
+  .about-section.reverse {
+    flex-direction: column;
+  }
+
+  .section-image,
+  .section-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 28px;
+  }
+
+  .about-header p {
+    font-size: 16px;
+  }
+
+  .section-text h2,
+  .features-section h2,
+  .team-section h2,
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .features-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-header h1 {
+    font-size: 24px;
+  }
+
+  .about-header p {
+    font-size: 14px;
+  }
+
+  .section-text h2,
+  .features-section h2,
+  .team-section h2,
+  .contact-section h2 {
+    font-size: 22px;
+  }
+
+  .contact-section {
+    padding: 30px 15px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-link {
+    width: 100%;
+  }
+}

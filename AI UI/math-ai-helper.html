@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math AI Helper</title>
+    <link rel="stylesheet" href="ai-styles.css" />
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header class="nav-header">
+      <div class="nav-container">
+        <a href="#" class="logo-link">
+          <img
+            src="/placeholder.svg?height=50&width=150"
+            alt="Math Helper Logo"
+            class="logo-image"
+          />
+        </a>
+        <div class="nav-buttons">
+          <a href="#" class="nav-button">Home</a>
+          <div class="dropdown">
+            <a href="#" class="nav-button dropdown-toggle">Resources</a>
+            <div class="dropdown-menu">
+              <a href="#">Math Guides</a>
+              <a href="#">Practice Problems</a>
+              <a href="#">Video Tutorials</a>
+              <a href="#">Math Games</a>
+            </div>
+          </div>
+          <a href="#" class="nav-button">About</a>
+          <a href="#" class="nav-button cta-button">
+            <span class="cta-text">Sign Up Free</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="math-ai-container">
+      <div class="math-ai-header">
+        <h1>Math AI Helper</h1>
+        <p>
+          Get step-by-step solutions to your math problems. Type your problem or
+          upload an image!
+        </p>
+      </div>
+
+      <div class="math-ai-content">
+        <div class="input-methods">
+          <div class="input-method-tabs">
+            <button class="tab-button active" data-tab="type">
+              Type Problem
+            </button>
+            <button class="tab-button" data-tab="upload">Upload Image</button>
+          </div>
+          <div class="input-method-content">
+            <div id="type-content" class="tab-content active">
+              <div class="input-container">
+                <label for="math-problem">Enter your math problem:</label>
+                <textarea
+                  id="math-problem"
+                  class="math-input"
+                  rows="3"
+                  placeholder="Example: 2x + 5 = 15"
+                ></textarea>
+                <div class="math-keyboard">
+                  <button class="math-key">+</button>
+                  <button class="math-key">-</button>
+                  <button class="math-key">×</button>
+                  <button class="math-key">÷</button>
+                  <button class="math-key">=</button>
+                  <button class="math-key">x</button>
+                  <button class="math-key">y</button>
+                  <button class="math-key">^</button>
+                  <button class="math-key">√</button>
+                  <button class="math-key">π</button>
+                </div>
+                <button id="solve-button" class="submit-button">
+                  Solve Problem
+                </button>
+              </div>
+            </div>
+            <div id="upload-content" class="tab-content">
+              <div class="upload-container">
+                <div id="upload-area" class="upload-area">
+                  <img
+                    src="/placeholder.svg?height=60&width=60"
+                    alt="Upload Icon"
+                    class="upload-icon"
+                  />
+                  <p>Drag & drop an image of your math problem</p>
+                  <p class="upload-subtitle">or click to browse files</p>
+                  <span class="file-upload-button">Choose File</span>
+                  <input
+                    type="file"
+                    id="file-upload"
+                    accept="image/*"
+                    style="display: none"
+                  />
+                </div>
+                <div
+                  id="upload-preview"
+                  class="upload-preview"
+                  style="display: none"
+                >
+                  <img
+                    id="preview-image"
+                    src="/placeholder.svg"
+                    alt="Preview"
+                  />
+                  <button id="remove-image" class="remove-button">
+                    Remove Image
+                  </button>
+                </div>
+                <button id="analyze-button" class="submit-button">
+                  Analyze Problem
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-container">
+          <div class="result-header">
+            <h2>Solution</h2>
+            <div class="result-actions">
+              <button id="copy-button" class="action-button">Copy</button>
+              <button id="save-button" class="action-button">Save</button>
+            </div>
+          </div>
+          <div class="result-content">
+            <div
+              id="loading-indicator"
+              class="loading-indicator"
+              style="display: none"
+            >
+              <div class="spinner"></div>
+              <p>Solving your problem...</p>
+            </div>
+            <div
+              id="solution-steps"
+              class="solution-steps"
+              style="display: none"
+            >
+              <div class="problem-statement">
+                <h3>Problem:</h3>
+                <p id="problem-text">Your problem will appear here</p>
+              </div>
+              <div class="answer">
+                <h3>Answer:</h3>
+                <p>The solution will appear here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="math-ai-examples">
+        <h2>Try These Examples</h2>
+        <div class="examples-grid">
+          <div class="example-card" data-problem="2x + 5 = 15">
+            <div class="example-problem">2x + 5 = 15</div>
+            <button class="try-button">Try This</button>
+          </div>
+          <div class="example-card" data-problem="factor x^2 - 9">
+            <div class="example-problem">x² - 9</div>
+            <button class="try-button">Try This</button>
+          </div>
+          <div class="example-card" data-problem="derive x^3 + 2x^2 - 5x + 3">
+            <div class="example-problem">x³ + 2x² - 5x + 3</div>
+            <button class="try-button">Try This</button>
+          </div>
+          <div class="example-card" data-problem="integrate 2x + 3">
+            <div class="example-problem">∫(2x + 3)dx</div>
+            <button class="try-button">Try This</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
