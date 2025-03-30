@@ -493,7 +493,7 @@ img {
 
 /* Grades Section */
 .grades-background {
-  background-color: #9fe7c3;
+  background-color: #A1E3D9;
   display: flex;
   padding: 48px 20px;
   flex-direction: column;
@@ -843,7 +843,7 @@ img {
 
 /* Hero CTA Section */
 .hero-section {
-  background-color: #008bb0;
+  background-color: #0B5868;
   display: flex;
   padding: 48px 20px;
   flex-direction: column;
