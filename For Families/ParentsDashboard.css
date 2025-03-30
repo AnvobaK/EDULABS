@@ -330,7 +330,7 @@ img {
 .button-text {
   font-family: "Raleway", -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 15px;
-  color: #333;
+  color: var(--text-dark);
   font-weight: 600;
   text-align: center;
   line-height: 1;
