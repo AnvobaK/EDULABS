@@ -90,18 +90,18 @@ img {
 
 .nav-button:hover {
   background-color: rgba(3, 105, 184, 0.1);
-  color: #0369b8;
+  color: #A1E3D9;
 }
 
 .cta-button {
-  background-color: #0369b8;
+  background-color: #A1E3D9;
   border-radius: 29px;
   padding: 12px 30px;
   color: #fff;
 }
 
 .cta-button:hover {
-  background-color: #0258a1;
+  background-color: #0B5868;
   color: #fff;
 }
 
@@ -137,7 +137,7 @@ img {
 }
 
 .dropdown-toggle:hover::after {
-  border-top-color: #0369b8;
+  border-top-color: #A1E3D9;
 }
 
 .dropdown-menu {
@@ -178,7 +178,7 @@ img {
 
 .dropdown-menu a:hover {
   background-color: rgba(3, 105, 184, 0.08);
-  color: #0369b8;
+  color: #A1E3D9;
   padding-left: 25px;
 }
 
@@ -191,7 +191,7 @@ img {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #0369b8;
+  background-color: #A1E3D9;
 }
 
 .dropdown-menu a:not(:last-child) {
@@ -415,7 +415,7 @@ img {
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  border: 4px solid #0584e6;
+  border: 4px solid #0B5868;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -456,7 +456,7 @@ img {
 }
 
 .read-more:hover {
-  color: #0369b8;
+  color: #A1E3D9;
   text-decoration: underline;
 }
 
@@ -468,7 +468,7 @@ img {
 
 /* Grades Section */
 .grades-section {
-  background-color: #9fe7c3;
+  background-color: #A1E3D9;
   display: flex;
   width: 100%;
   padding: 48px 20px;
@@ -574,7 +574,7 @@ img {
 }
 
 .first-grade {
-  color: #0369b8;
+  color: #A1E3D9;
 }
 
 .second-grade {
@@ -627,7 +627,7 @@ img {
 }
 
 .view-lessons:hover {
-  color: #0369b8;
+  color: #A1E3D9;
   text-decoration: underline;
 }
 
