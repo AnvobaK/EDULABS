@@ -391,6 +391,184 @@ body {
   background-color: var(--primary-hover);
 }
 
+/* DreamBox Products Section Styles */
+.dreambox-products-section {
+  padding: 60px 20px;
+  background-color: var(--background);
+  position: relative;
+}
+
+.dreambox-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-title {
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.products-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(5, 38, 45, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(5, 38, 45, 0.15);
+}
+
+.product-header {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.math-header {
+  background-color: #0088a9; /* Teal color for Math */
+}
+
+.reading-header {
+  background-color: #8cc63f; /* Green color for Reading */
+}
+
+.product-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.product-description {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.product-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.product-cta:hover {
+  color: var(--primary-hover);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.product-cta:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .dreambox-products-section {
+    padding: 40px 20px;
+  }
+
+  .products-title {
+    font-size: 30px;
+  }
+
+  .products-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .dreambox-products-section {
+    padding: 30px 15px;
+  }
+
+  .products-title {
+    font-size: 26px;
+  }
+
+  .products-subtitle {
+    font-size: 14px;
+  }
+
+  .product-header {
+    padding: 20px;
+  }
+
+  .product-content {
+    padding: 20px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .product-description {
+    font-size: 14px;
+  }
+}
+
 .video-container {
   width: 522px;
   height: 294px;

@@ -718,3 +718,6 @@ img {
     width: 100%;
   }
 }
+.cta-button secondary {
+  color: black;
+}
