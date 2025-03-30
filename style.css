@@ -268,6 +268,12 @@
   background-color: #a1e3d8;
 }
 
+.demo-button:hover {
+  background-color: #0b5868;
+  color: #fff;
+  border-radius: 32px;
+}
+
 .demo-button i {
   margin-left: 8px;
 }
@@ -637,6 +643,12 @@
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
+}
+
+.explore-link:hover {
+  background-color: #0B5868;
+  color: #fff;
+  border-radius: 32px;
 }
 
 .explore-link i {
