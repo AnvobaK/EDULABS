@@ -751,11 +751,15 @@ img {
 }
 
 .button-text {
-  font-family: "Inter", Raleway, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 16px;
-  color: var(--white);
-  font-weight: 700;
+  font-family: "Raleway", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: center;
   line-height: 1;
+}
+.button-text:hover {
+  color: var(--primary);
 }
 
 .button-icon {

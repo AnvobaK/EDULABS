@@ -335,10 +335,31 @@ body {
 /* Rest of your existing styles */
 .dreambox-section {
   padding: 100px 360px;
-  background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/26dd34ad77ed366a47b33df7e542eba63dbc504a")
-    var(--background);
+  background-image: url(../Assets/kenny-eliason-zFSo6bnZJTw-unsplash.jpg);
   background-size: cover;
   position: relative;
+}
+.dreambox-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust opacity here (0 = fully transparent, 1 = fully opaque) */
+  z-index: 1;
+}
+
+/* Ensure text appears above the overlay */
+.dreambox-section * {
+  position: relative;
+  z-index: 2;
+  color: white; /* Change text color if necessary */
 }
 
 .dreambox-container {
@@ -746,7 +767,7 @@ body {
   font-size: 16px;
   line-height: 2;
   margin-bottom: 20px;
-  color: var(--text-dark);
+  color: white;
 }
 
 .image-container {
