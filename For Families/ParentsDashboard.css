@@ -329,11 +329,14 @@ img {
 
 .button-text {
   font-family: "Raleway", -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 14px;
-  color: var(--white);
-  font-weight: 700;
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
   text-align: center;
   line-height: 1;
+}
+.button-text:hover {
+  color: var(--primary);
 }
 
 .button-icon {
