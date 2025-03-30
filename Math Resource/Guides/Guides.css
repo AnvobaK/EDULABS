@@ -5,11 +5,40 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Color Theme */
+  --olive: #968445;
+  --dark-teal: #05262d;
+  --bright-yellow: #ffe44b;
+  --pale-yellow: #f6f09c;
+  --mint: #a1e3d8;
+  --teal: #0b5868;
+
+  /* Functional Colors */
+  --primary: var(--teal);
+  --primary-hover: #094857;
+  --primary-light: rgba(11, 88, 104, 0.1);
+  --secondary: var(--mint);
+  --accent: var(--bright-yellow);
+  --accent-light: var(--pale-yellow);
+  --dark: var(--dark-teal);
+  --text-dark: var(--dark-teal);
+  --text-light: #4a6269;
+  --background: #f8f9fa;
+  --white: #fff;
+  --error: #e53935;
+  --success: #43a047;
+  --border-radius: 8px;
+  --shadow: 0 4px 12px rgba(5, 38, 45, 0.1);
+  --transition: all 0.3s ease;
+}
+
 body {
   font-family: "Inter", Arial, -apple-system, Roboto, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #000;
+  color: var(--text-dark);
   padding-top: 76px; /* Account for fixed header */
+  background-color: var(--background);
 }
 
 img {
@@ -21,8 +50,8 @@ img {
 .nav-header {
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
+  box-shadow: 0px 2px 10px 0px rgba(5, 38, 45, 0.2);
+  background-color: var(--white);
   display: flex;
   min-height: 76px;
   width: 100%;
@@ -37,7 +66,7 @@ img {
 .nav-container {
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--white);
   align-self: stretch;
   display: flex;
   width: 100%;
@@ -74,35 +103,35 @@ img {
 .nav-button {
   border: none;
   background: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 12px 20px;
   font-family: "Inter", Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-dark);
   text-align: center;
   line-height: 1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   text-decoration: none;
   display: inline-block;
 }
 
 .nav-button:hover {
-  background-color: rgba(3, 105, 184, 0.1);
-  color: #A1E3D9;
+  background-color: var(--primary-light);
+  color: var(--primary);
 }
 
 .cta-button {
-  background-color: #A1E3D9;
+  background-color: var(--primary);
   border-radius: 29px;
   padding: 12px 30px;
-  color: #fff;
+  color: var(--white);
 }
 
 .cta-button:hover {
-  background-color: #0B5868;
-  color: #fff;
+  background-color: var(--primary-hover);
+  color: var(--white);
 }
 
 .button-text,
@@ -132,12 +161,12 @@ img {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000;
+  border-top: 5px solid var(--text-dark);
   transition: transform 0.3s ease;
 }
 
 .dropdown-toggle:hover::after {
-  border-top-color: #A1E3D9;
+  border-top-color: var(--primary);
 }
 
 .dropdown-menu {
@@ -145,10 +174,10 @@ img {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
+  background-color: var(--white);
   min-width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   z-index: 1001;
   overflow: hidden;
   transform: translateY(10px);
@@ -156,7 +185,7 @@ img {
   transition: transform 0.3s ease, opacity 0.3s ease;
   padding: 8px 0;
   margin-top: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(5, 38, 45, 0.08);
 }
 
 .dropdown-menu.show {
@@ -169,16 +198,16 @@ img {
   display: block;
   padding: 12px 20px;
   text-decoration: none;
-  color: #333;
+  color: var(--text-dark);
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: var(--transition);
   position: relative;
 }
 
 .dropdown-menu a:hover {
-  background-color: rgba(3, 105, 184, 0.08);
-  color: #A1E3D9;
+  background-color: var(--primary-light);
+  color: var(--primary);
   padding-left: 25px;
 }
 
@@ -191,11 +220,11 @@ img {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #A1E3D9;
+  background-color: var(--primary);
 }
 
 .dropdown-menu a:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(5, 38, 45, 0.05);
 }
 
 /* Show dropdown on hover for desktop */
@@ -282,7 +311,7 @@ img {
     border-radius: 0;
     margin-top: 0;
     border: none;
-    background-color: #f5f5f5;
+    background-color: rgba(161, 227, 216, 0.2);
     padding: 0;
     max-height: 0;
     overflow: hidden;
@@ -291,7 +320,7 @@ img {
 
   .dropdown-menu.show {
     max-height: 300px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--secondary);
   }
 
   .dropdown-menu a {
@@ -333,7 +362,7 @@ img {
   font-family: "Inter", Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 36px;
   font-weight: 700;
-  color: #024170;
+  color: var(--text-dark);
 }
 
 .description-section {
@@ -349,7 +378,7 @@ img {
 .subtitle {
   font-family: "Inter", Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 20px;
-  color: #000;
+  color: var(--text-dark);
   font-weight: 400;
   line-height: 1.5;
 }
@@ -386,11 +415,12 @@ img {
   height: 26px;
   object-fit: contain;
   margin-top: 10px;
+  color: var(--primary);
 }
 
 .header-title {
   font-size: 28px;
-  color: #024170;
+  color: var(--text-dark);
   font-weight: 400;
   margin: 0;
 }
@@ -400,7 +430,7 @@ img {
   min-width: 300px;
   font-size: 16px;
   line-height: 1.5;
-  color: #000;
+  color: var(--text-dark);
 }
 
 /* Guides Grid */
@@ -413,9 +443,9 @@ img {
 
 .guide-card {
   border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  border: 4px solid #0B5868;
+  background-color: var(--white);
+  box-shadow: 4px 4px 4px rgba(5, 38, 45, 0.1);
+  border: 4px solid var(--primary);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -427,13 +457,13 @@ img {
 
 .guide-card:hover {
   transform: translateY(-5px);
-  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 8px 12px rgba(5, 38, 45, 0.15);
 }
 
 .card-title {
   font-size: 18px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-dark);
   margin: 0 0 15px;
 }
 
@@ -441,12 +471,12 @@ img {
   font-size: 14px;
   line-height: 1.5;
   margin: 0 0 20px;
-  color: #000;
+  color: var(--text-dark);
   flex-grow: 1;
 }
 
 .read-more {
-  color: #00607a;
+  color: var(--primary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -456,7 +486,7 @@ img {
 }
 
 .read-more:hover {
-  color: #A1E3D9;
+  color: var(--primary-hover);
   text-decoration: underline;
 }
 
@@ -468,7 +498,7 @@ img {
 
 /* Grades Section */
 .grades-section {
-  background-color: #A1E3D9;
+  background-color: var(--secondary);
   display: flex;
   width: 100%;
   padding: 48px 20px;
@@ -507,13 +537,14 @@ img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
+  color: var(--primary);
 }
 
 .grades-title {
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 27px;
-  color: #024170;
-  font-weight: 900;
+  font-family: "Inter", -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 32px;
+  color: var(--text-dark);
+  font-weight: 400;
   margin: 0;
 }
 
@@ -528,12 +559,10 @@ img {
   font-size: 16px;
   color: #000;
   line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.description-subtext {
-  max-width: 600px;
-  margin: 0 auto;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  color: var(--text-dark);
 }
 
 .grades-grid {
@@ -544,9 +573,9 @@ img {
 }
 
 .grade-card {
-  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  box-shadow: 4px 4px 4px rgba(5, 38, 45, 0.1);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -559,7 +588,7 @@ img {
 
 .grade-card:hover {
   transform: translateY(-5px);
-  box-shadow: 4px 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 8px 12px rgba(5, 38, 45, 0.15);
 }
 
 .grade-title {
@@ -570,55 +599,50 @@ img {
 }
 
 .kindergarten {
-  color: #ecc638;
+  color: var(--accent);
 }
 
 .first-grade {
-  color: #A1E3D9;
+  color: var(--primary);
 }
 
 .second-grade {
-  color: #24aace;
+  color: var(--secondary);
 }
 
 .third-grade {
-  color: #c76659;
+  color: var(--olive);
 }
 
 .fourth-grade {
-  color: #7e55dc;
+  color: var(--primary-hover);
 }
 
 .fifth-grade {
-  color: #82b804;
+  color: var(--accent-light);
 }
 
 .sixth-grade {
-  color: #b22a61;
+  color: var(--primary);
 }
 
 .seventh-grade {
-  color: #5043ba;
+  color: var(--dark);
 }
 
 .eighth-grade {
-  color: #121487;
-}
-
-.homeschool {
-  color: #c825c0;
+  color: var(--text-dark);
 }
 
 .grade-description {
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 14px;
+  color: var(--text-dark);
   line-height: 1.5;
   margin: 15px 0;
   flex-grow: 1;
 }
 
-.view-lessons {
-  color: #00607a;
+.view-lessons-link {
+  color: var(--primary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -626,8 +650,8 @@ img {
   transition: color 0.3s ease;
 }
 
-.view-lessons:hover {
-  color: #A1E3D9;
+.view-lessons-link:hover {
+  color: var(--primary-hover);
   text-decoration: underline;
 }
 
