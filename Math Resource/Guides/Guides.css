@@ -319,6 +319,7 @@ img {
   max-width: 1200px;
   padding: 20px;
   text-align: center;
+  align-items: center;
 }
 
 .header-content {
@@ -334,6 +335,7 @@ img {
   font-size: 36px;
   font-weight: 700;
   color: #024170;
+  align-self: center;
 }
 
 .description-section {
