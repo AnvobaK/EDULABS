@@ -5,18 +5,48 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Color Theme */
+  --olive: #968445;
+  --dark-teal: #05262d;
+  --bright-yellow: #ffe44b;
+  --pale-yellow: #f6f09c;
+  --mint: #a1e3d8;
+  --teal: #0b5868;
+
+  /* Functional Colors */
+  --primary: var(--teal);
+  --primary-hover: #094857;
+  --primary-light: rgba(11, 88, 104, 0.1);
+  --secondary: var(--mint);
+  --accent: var(--bright-yellow);
+  --accent-light: var(--pale-yellow);
+  --dark: var(--dark-teal);
+  --text-dark: var(--dark-teal);
+  --text-light: #4a6269;
+  --background: #f8f9fa;
+  --white: #fff;
+  --error: #e53935;
+  --success: #43a047;
+  --border-radius: 8px;
+  --shadow: 0 4px 12px rgba(5, 38, 45, 0.1);
+  --transition: all 0.3s ease;
+}
+
 body {
   font-family: "Inter", sans-serif;
   padding-top: 76px; /* Account for fixed header */
   line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background);
 }
 
 /* Navigation Header */
 .nav-header {
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
+  box-shadow: 0px 2px 10px 0px rgba(5, 38, 45, 0.2);
+  background-color: var(--white);
   display: flex;
   min-height: 76px;
   width: 100%;
@@ -31,7 +61,7 @@ body {
 .nav-container {
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--white);
   align-self: stretch;
   display: flex;
   min-width: 240px;
@@ -73,35 +103,35 @@ body {
 .nav-button {
   border: none;
   background: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 12px 20px;
   font-family: "Inter", Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-dark);
   text-align: center;
   line-height: 1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   text-decoration: none;
   display: inline-block;
 }
 
 .nav-button:hover {
-  background-color: rgba(3, 105, 184, 0.1);
-  color: #0b5868;
+  background-color: var(--primary-light);
+  color: var(--primary);
 }
 
 .cta-button {
-  background-color: #0b5868;
+  background-color: var(--primary);
   border-radius: 29px;
   padding: 12px 30px;
-  color: #fff;
+  color: var(--white);
 }
 
 .cta-button:hover {
-  background-color: #0b5868;
-  color: #fff;
+  background-color: var(--primary-hover);
+  color: var(--white);
 }
 
 .button-text,
@@ -131,12 +161,12 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000;
+  border-top: 5px solid var(--text-dark);
   transition: transform 0.3s ease;
 }
 
 .dropdown-toggle:hover::after {
-  border-top-color: #0b5868;
+  border-top-color: var(--primary);
 }
 
 .dropdown-menu {
@@ -144,10 +174,10 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
+  background-color: var(--white);
   min-width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   z-index: 1001;
   overflow: hidden;
   transform: translateY(10px);
@@ -155,7 +185,7 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
   padding: 8px 0;
   margin-top: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(5, 38, 45, 0.08);
 }
 
 .dropdown-menu.show {
@@ -168,16 +198,16 @@ body {
   display: block;
   padding: 12px 20px;
   text-decoration: none;
-  color: #333;
+  color: var(--text-dark);
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: var(--transition);
   position: relative;
 }
 
 .dropdown-menu a:hover {
-  background-color: rgba(3, 105, 184, 0.08);
-  color: #0b5868;
+  background-color: var(--primary-light);
+  color: var(--primary);
   padding-left: 25px;
 }
 
@@ -190,11 +220,11 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #0b5868;
+  background-color: var(--primary);
 }
 
 .dropdown-menu a:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(5, 38, 45, 0.05);
 }
 
 /* Show dropdown on hover for desktop */
@@ -281,7 +311,7 @@ body {
     border-radius: 0;
     margin-top: 0;
     border: none;
-    background-color: #f5f5f5;
+    background-color: rgba(161, 227, 216, 0.2);
     padding: 0;
     max-height: 0;
     overflow: hidden;
@@ -290,7 +320,7 @@ body {
 
   .dropdown-menu.show {
     max-height: 300px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--secondary);
   }
 
   .dropdown-menu a {
@@ -305,9 +335,31 @@ body {
 /* Rest of your existing styles */
 .dreambox-section {
   padding: 100px 360px;
-  background: url("/Assets/back-school-witch-school-supplies.jpg") lightgray center center;
+  background-image: url(../Assets/kenny-eliason-zFSo6bnZJTw-unsplash.jpg);
   background-size: cover;
   position: relative;
+}
+.dreambox-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust opacity here (0 = fully transparent, 1 = fully opaque) */
+  z-index: 1;
+}
+
+/* Ensure text appears above the overlay */
+.dreambox-section * {
+  position: relative;
+  z-index: 2;
+  color: white; /* Change text color if necessary */
 }
 
 .dreambox-container {
@@ -330,7 +382,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 45px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-dark);
   margin-bottom: 20px;
 }
 
@@ -338,12 +390,12 @@ body {
   font-family: Arial, sans-serif;
   font-size: 18px;
   line-height: 2;
-  color: #000;
+  color: var(--text-dark);
   margin-bottom: 20px;
 }
 
 .demo-button {
-  color: #fff;
+  color: var(--white);
   padding: 14px 24px;
   border-radius: 32px;
   font-family: Arial, sans-serif;
@@ -353,11 +405,189 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  background-color: #a1e3d8;
+  background-color: var(--primary);
 }
 
-.demo-button:hover{
-  background-color: #0B5868;
+.demo-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* DreamBox Products Section Styles */
+.dreambox-products-section {
+  padding: 60px 20px;
+  background-color: var(--background);
+  position: relative;
+}
+
+.dreambox-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-title {
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.products-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: var(--text-light);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(5, 38, 45, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(5, 38, 45, 0.15);
+}
+
+.product-header {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.math-header {
+  background-color: #0088a9; /* Teal color for Math */
+}
+
+.reading-header {
+  background-color: #8cc63f; /* Green color for Reading */
+}
+
+.product-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.product-description {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.product-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.product-cta:hover {
+  color: var(--primary-hover);
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.product-cta:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .dreambox-products-section {
+    padding: 40px 20px;
+  }
+
+  .products-title {
+    font-size: 30px;
+  }
+
+  .products-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .dreambox-products-section {
+    padding: 30px 15px;
+  }
+
+  .products-title {
+    font-size: 26px;
+  }
+
+  .products-subtitle {
+    font-size: 14px;
+  }
+
+  .product-header {
+    padding: 20px;
+  }
+
+  .product-content {
+    padding: 20px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .product-description {
+    font-size: 14px;
+  }
 }
 
 .video-container {
@@ -366,7 +596,7 @@ body {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 16px 24px 2px rgba(5, 38, 45, 0.14);
 }
 
 .video-wrapper {
@@ -394,11 +624,11 @@ body {
   opacity: 0.65;
   border-radius: 42px;
   backdrop-filter: blur(1.5px);
-  background-color: #0593ff;
+  background-color: var(--primary);
 }
 
 .play-icon {
-  color: #fff;
+  color: var(--white);
   font-size: 42px;
   position: relative;
   z-index: 1;
@@ -443,7 +673,7 @@ body {
 .feature-image {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 4px 26px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 26px 5px rgba(5, 38, 45, 0.1);
 }
 
 .feature-content {
@@ -455,6 +685,7 @@ body {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
 .feature-description {
@@ -462,10 +693,11 @@ body {
   font-size: 16px;
   line-height: 2;
   margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
 .feature-cta {
-  color: #fff;
+  color: var(--white);
   padding: 8px 16px;
   border-radius: 32px;
   font-family: Arial, sans-serif;
@@ -475,11 +707,11 @@ body {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  background-color: #a1e3d8;
+  background-color: var(--primary);
 }
 
-.feature-cta:hover{
-  background-color: #0B5868;
+.feature-cta:hover {
+  background-color: var(--primary-hover);
 }
 
 @media (max-width: 991px) {
@@ -527,6 +759,7 @@ body {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
 .section-description {
@@ -534,6 +767,7 @@ body {
   font-size: 16px;
   line-height: 2;
   margin-bottom: 20px;
+  color: white;
 }
 
 .image-container {
@@ -549,7 +783,7 @@ body {
 .curriculum-image {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 4px 26px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 26px 5px rgba(5, 38, 45, 0.1);
 }
 
 .image-caption {
@@ -557,7 +791,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-style: italic;
-  color: #333;
+  color: var(--text-light);
   margin-top: 10px;
 }
 
@@ -596,7 +830,7 @@ body {
 .impact-image {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 4px 26px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 26px 5px rgba(5, 38, 45, 0.1);
 }
 
 .content-wrapper {
@@ -608,6 +842,7 @@ body {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
 .impact-description {
@@ -615,10 +850,11 @@ body {
   font-size: 16px;
   line-height: 2;
   margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
 .cta-button {
-  color: #fff;
+  color: var(--white);
   padding: 8px 16px;
   border-radius: 32px;
   font-family: Arial, sans-serif;
@@ -628,13 +864,17 @@ body {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  background-color: #a1e3d8;
+  background-color: var(--primary);
+}
+
+.cta-button:hover {
+  background-color: var(--primary-hover);
 }
 
 /* Grade Selection Component Styles */
 .grade-selection {
   padding: 50px 360px;
-  background-color: #cff3e1;
+  background-color: var(--secondary);
 }
 
 .grade-selection-container {
@@ -652,8 +892,8 @@ body {
   border-radius: 22px;
   padding: 17px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(5, 38, 45, 0.5);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
 }
@@ -661,23 +901,23 @@ body {
 .grade-letter {
   font-size: 50px;
   font-weight: 600;
-  color: #627481;
+  color: var(--text-light);
 }
 
 .grade-name {
   font-size: 12px;
   font-weight: 600;
-  color: #58595b;
+  color: var(--text-dark);
   margin-top: 10px;
 }
 
 .kindergarten {
-  background-color: #627481;
+  background-color: var(--primary);
 }
 
 .kindergarten .grade-letter,
 .kindergarten .grade-name {
-  color: #fff;
+  color: var(--white);
 }
 
 .alignment-section {
@@ -687,6 +927,7 @@ body {
 .alignment-title {
   font-size: 16px;
   margin-bottom: 20px;
+  color: var(--text-dark);
 }
 
 .alignment-list {
@@ -710,7 +951,7 @@ body {
 .alignment-text {
   font-size: 15px;
   font-weight: 600;
-  color: #58595b;
+  color: var(--text-dark);
 }
 
 /* Media Queries */
@@ -758,12 +999,7 @@ body {
 .benefits-header {
   width: 679px;
   max-width: 100%;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   color: #ffffff;
   text-align: center;
 }
@@ -796,7 +1032,7 @@ body {
   gap: 20px;
 }
 
-.benefits-row+.benefits-row {
+.benefits-row + .benefits-row {
   margin-top: 48px;
 }
 
@@ -820,12 +1056,7 @@ body {
 
 .card-title {
   margin-top: 16px;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 23px;
   color: #ffffff;
   font-weight: 700;
@@ -833,12 +1064,7 @@ body {
 
 .card-description {
   margin-top: 16px;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 20px;
   color: #ffffff;
   font-weight: 400;
@@ -867,7 +1093,7 @@ body {
     gap: 40px;
   }
 
-  .benefits-row+.benefits-row {
+  .benefits-row + .benefits-row {
     margin-top: 0;
   }
 
@@ -899,12 +1125,7 @@ body {
 }
 
 .main-title {
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 28px;
   color: #024170;
   font-weight: 900;
@@ -920,12 +1141,7 @@ body {
 }
 
 .description-text {
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 24px;
   color: #024170;
   font-weight: 400;
@@ -947,12 +1163,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .grade-card {
@@ -1131,12 +1342,7 @@ body {
 .device-compatibility__title {
   width: 100%;
   padding: 1px 0 2px;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 27px;
   color: #024170;
   font-weight: 900;
@@ -1155,12 +1361,7 @@ body {
 
 .device-compatibility__description {
   width: 100%;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 20px;
   color: #000;
   font-weight: 400;
@@ -1176,12 +1377,7 @@ body {
   width: 100%;
   max-width: 660px;
   padding: 1px 0 3px;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 19px;
   color: #0369b8;
   font-weight: 700;
@@ -1227,12 +1423,7 @@ body {
 }
 
 .device-name {
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 19px;
   color: #000;
   font-weight: 700;
@@ -1293,7 +1484,8 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f9fafb;
@@ -1373,7 +1565,7 @@ body {
 
 .icon::before,
 .icon::after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: #6b7280;
   transition: transform 0.3s ease;
@@ -1495,12 +1687,7 @@ body {
 }
 
 .main-title {
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 27px;
   color: #024170;
   font-weight: 900;
@@ -1509,12 +1696,7 @@ body {
 
 .header-description {
   margin-top: 20px;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 16px;
   color: #000;
   font-weight: 400;
@@ -1567,12 +1749,7 @@ body {
 .card-content {
   margin-top: 12px;
   width: 100%;
-  font-family:
-    Arial,
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
   flex: 1;
 }
 
