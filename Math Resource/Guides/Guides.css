@@ -348,6 +348,7 @@ img {
   max-width: 1200px;
   padding: 20px;
   text-align: center;
+  align-items: center;
 }
 
 .header-content {
@@ -362,7 +363,7 @@ img {
   font-family: "Inter", Arial, -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 36px;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #024170;
 }
 
 .description-section {

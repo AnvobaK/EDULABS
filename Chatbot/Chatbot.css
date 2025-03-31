@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #05262D, #107C93);
+    margin: 0;
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #00607A, #D3BE3B, #FDD12E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: #645f5f;
+    font-size: 1.8rem;
+}
+
+.suggestion-grid {
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 1000px;
+    margin-bottom: auto;
+    flex-wrap: wrap;
+    margin: auto 0;
+}
+
+.suggestion-column {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    min-width: 240px;
+    margin: auto 0;
+    width: 315px;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #fdd12e;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    background-color: #05262D;
+    color: #fdd12e;
+}
+
+.card-title {
+    color: #fdd12e;
+}
+
+.card-subtitle {
+    color: #ffe44b;
+}
+
+.dark .card-subtitle {
+    color: white;
+}
+
+.input-container {
+    margin-top: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #05262d;
+    border: 1px solid #968444;
+    border-radius: 9999px;
+    padding: 0.75rem 1rem;
+}
+
+.mic-button {
+    background: none;
+    border: none;
+    color: #A1E3D9;
+    cursor: pointer;
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.input-field {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.input-field::placeholder {
+    color: #A1E3D9;
+}
+
+.send-button {
+    background-color: #fdd12e;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 0.75rem;
+}
+
+.send-button i {
+    color: #05262d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .suggestion-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math AI Helper</title>
+    <link rel="stylesheet" href="ai-styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav-header">
+      <header class="nav-container">
+        <a href="#" class="logo-link">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/e4baa065d7fa490e92e458926e5e4b5a/5930ad370d3e46f3d583d0f4cbb5a65440451c75?placeholderIfAbsent=true"
+            alt="Logo"
+            class="logo-image"
+          />
+        </a>
+        <div class="nav-buttons">
+          <a href="../EduLabs Math/main.html" class="nav-button">
+            <span class="button-text">Edulabs Math</span>
+          </a>
+          <a href="#" class="nav-button">
+            <span class="button-text">For Families</span>
+          </a>
+          <div class="dropdown">
+            <button class="nav-button dropdown-toggle">Math Resources</button>
+            <div class="dropdown-menu">
+              <a href="../Math Resource/Guides/Guides.html">Guides</a>
+              <a href="../Math Resource/Math Resources/MathResources.html">Math Resources</a>
+              <a href="../Math Resource/Skills/Skills.html">Skills</a>
+              <a href="../AI HELPER/math-ai-helper.html">AI Helper</a>
+            </div>
+          </div>
+          <a href="../Contact Us/Contact.html" class="nav-button cta-button">
+            <span class="cta-text">Contact Us</span>
+          </a>
+        </div>
+      </header>
+    </nav>
+
+    <main class="math-ai-container">
+      <section class="math-ai-header">
+        <h1>Math AI Helper</h1>
+        <p>
+          Need help with a math problem? Our AI assistant can help you solve it
+          step by step!
+        </p>
+      </section>
+
+      <section class="math-ai-content">
+        <div class="input-methods">
+          <div class="input-method-tabs">
+            <button class="tab-button active" data-tab="type">
+              Type a Problem
+            </button>
+            <button class="tab-button" data-tab="upload">
+              Upload an Image
+            </button>
+          </div>
+
+          <div class="input-method-content">
+            <div class="tab-content active" id="type-content">
+              <div class="input-container">
+                <label for="math-problem">Enter your math problem:</label>
+                <input
+                  type="text"
+                  id="math-problem"
+                  placeholder="Example: 3x + 5 = 20"
+                  class="math-input"
+                />
+                <div class="math-keyboard">
+                  <button class="math-key">+</button>
+                  <button class="math-key">-</button>
+                  <button class="math-key">×</button>
+                  <button class="math-key">÷</button>
+                  <button class="math-key">=</button>
+                  <button class="math-key">x</button>
+                  <button class="math-key">y</button>
+                  <button class="math-key">²</button>
+                  <button class="math-key">√</button>
+                  <button class="math-key">π</button>
+                </div>
+                <button class="submit-button" id="solve-button">
+                  Solve Problem
+                </button>
+              </div>
+            </div>
+
+            <div class="tab-content" id="upload-content">
+              <div class="upload-container">
+                <div class="upload-area" id="upload-area">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/placeholder-math.svg"
+                    alt="Upload icon"
+                    class="upload-icon"
+                  />
+                  <p>Drag & drop an image of your math problem here</p>
+                  <p class="upload-subtitle">or</p>
+                  <label for="file-upload" class="file-upload-button"
+                    >Choose File</label
+                  >
+                  <input type="file" id="file-upload" accept="image/*" hidden />
+                </div>
+                <div class="upload-preview" id="upload-preview">
+                  <img
+                    id="preview-image"
+                    src="/placeholder.svg"
+                    alt="Preview"
+                  />
+                  <button class="remove-button" id="remove-image">
+                    Remove
+                  </button>
+                </div>
+                <button class="submit-button" id="analyze-button">
+                  Analyze Image
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-container" id="result-container">
+          <div class="result-header">
+            <h2>Solution</h2>
+            <div class="result-actions">
+              <button class="action-button" id="copy-button">Copy</button>
+              <button class="action-button" id="save-button">Save</button>
+            </div>
+          </div>
+          <div class="result-content">
+            <div class="loading-indicator" id="loading-indicator">
+              <div class="spinner"></div>
+              <p>Solving your problem...</p>
+            </div>
+            <div class="solution-steps" id="solution-steps">
+              <div class="problem-statement">
+                <h3>Problem:</h3>
+                <p id="problem-text">3x + 5 = 20</p>
+              </div>
+              <div class="step">
+                <h3>Step 1:</h3>
+                <p>Subtract 5 from both sides of the equation.</p>
+                <div class="step-math">3x + 5 - 5 = 20 - 5</div>
+                <div class="step-math">3x = 15</div>
+              </div>
+              <div class="step">
+                <h3>Step 2:</h3>
+                <p>Divide both sides by 3 to isolate x.</p>
+                <div class="step-math">3x ÷ 3 = 15 ÷ 3</div>
+                <div class="step-math">x = 5</div>
+              </div>
+              <div class="answer">
+                <h3>Answer:</h3>
+                <p>x = 5</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="math-ai-examples">
+        <h2>Example Problems</h2>
+        <div class="examples-grid">
+          <div class="example-card" data-problem="5 + 7">
+            <div class="example-problem">5 + 7</div>
+            <button class="try-button">Try This</button>
+          </div>
+          <div class="example-card" data-problem="12 × 8">
+            <div class="example-problem">12 × 8</div>
+            <button class="try-button">Try This</button>
+          </div>
+          <div class="example-card" data-problem="2x + 7 = 15">
+            <div class="example-problem">2x + 7 = 15</div>
+            <button class="try-button">Try This</button>
+          </div>
+          <div class="example-card" data-problem="√16">
+            <div class="example-problem">√16</div>
+            <button class="try-button">Try This</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
