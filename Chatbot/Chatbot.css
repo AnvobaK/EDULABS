@@ -201,8 +201,8 @@ header {
 }
 
 .chat-bubble.ai {
-  background-color: #f8d7da;
+  background-color: #ffe44b;
   align-self: flex-start;
   text-align: left;
-  color: #842029;
+  color:#05262d;
 }
