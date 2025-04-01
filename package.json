@@ -1,0 +1,18 @@
+{
+  "name": "edulabs",
+  "version": "1.0.0",
+  "description": "Every student is unique, their learning path should be too. EduLabs personalizes instruction, so educators can scale differentiation to meet all student needs.  A DreamBox clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^3.6.2",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
