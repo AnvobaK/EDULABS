@@ -826,3 +826,90 @@ img {
 .cta-button secondary {
   color: black;
 }
+
+/* Footer Section*/
+.site-footer {
+  padding: 40px 360px 0;
+  background-color: #05262d;
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #4d6d84;
+}
+
+.company-info {
+  flex: 1;
+}
+
+.footer-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.company-description {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.support-contact {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.support-phone {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.quick-links {
+  flex: 1;
+}
+
+.links-heading {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.links-list :hover {
+  text-decoration: underline;
+  color: #ffe44b;
+}
+
+.link-item {
+  color: #fff;
+  text-decoration: none;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding: 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
