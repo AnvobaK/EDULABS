@@ -1,6 +1,28 @@
+// Import the module using a CDN for browser compatibility
+import { HfInference } from "https://cdn.jsdelivr.net/npm/@huggingface/inference@2.6.1/+esm";
+
+let client;
+
+async function initializeClient() {
+  try {
+    client = new HfInference("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");
+    console.log("Hugging Face client initialized");
+  } catch (error) {
+    console.error("Error initializing client:", error);
+  }
+}
+
+// Initialize the client before anything else
+await initializeClient();
+
 window.onload = function () {
-  document.querySelector(".title").classList.add("visible");
-  document.querySelector(".subtitle").classList.add("visible");
+  const title = document.querySelector(".title");
+  const subtitle = document.querySelector(".subtitle");
+
+  if (title && subtitle) {
+    title.classList.add("visible");
+    subtitle.classList.add("visible");
+  }
 };
 
 // Define isMathProblem globally
@@ -9,14 +31,14 @@ function isMathProblem(message) {
   return /[\d+\-*/^=]/.test(message);
 }
 
-// Define sendMessage globally
-async function sendMessage() {
+// Make sendMessage available globally
+window.sendMessage = async function () {
   const inputField = document.querySelector(".input-field");
   const chatContainer = document.querySelector(".chat-container");
   const suggestionGrid = document.querySelector(".suggestion-grid");
   const message = inputField.value.trim();
 
-  if (message) {
+  if (message && client) {
     // Replace the suggestion grid with the chat container if not already done
     if (suggestionGrid.style.display !== "none") {
       suggestionGrid.style.display = "none";
@@ -29,23 +51,27 @@ async function sendMessage() {
     userBubble.textContent = message;
     chatContainer.appendChild(userBubble);
 
-    // Scroll to the bottom of the chat container
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    // Add AI's temporary response bubble
+    const aiBubble = document.createElement("div");
+    aiBubble.className = "chat-bubble ai";
+    aiBubble.textContent = "Thinking...";
+    chatContainer.appendChild(aiBubble);
 
-    if (isMathProblem(message)) {
-      const result = await solveMathProblem(message);
+    try {
+      const response = await client.textGeneration({
+        model: "Qwen/QwQ-32B",
+        inputs: message,
+        parameters: {
+          max_new_tokens: 500,
+          return_full_text: false,
+        },
+      });
 
-      // Add AI's response as a chat bubble
-      const aiBubble = document.createElement("div");
-      aiBubble.className = "chat-bubble ai";
-      aiBubble.textContent = `Math Solution: ${result}`;
-      chatContainer.appendChild(aiBubble);
-    } else {
-      // Add AI's response for non-math messages
-      const aiBubble = document.createElement("div");
-      aiBubble.className = "chat-bubble ai";
-      aiBubble.textContent = `I'm not sure how to solve that, but I received your message: "${message}"`;
-      chatContainer.appendChild(aiBubble);
+      // Update AI bubble with the response
+      aiBubble.textContent = response.generated_text;
+    } catch (error) {
+      console.error("Error getting AI response:", error);
+      aiBubble.textContent = "Sorry, I couldn't process your request.";
     }
 
     // Scroll to the bottom of the chat container
@@ -54,7 +80,7 @@ async function sendMessage() {
     // Clear the input field
     inputField.value = "";
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   const inputField = document.querySelector(".input-field");
@@ -114,9 +140,10 @@ async function solveMathProblem(problem) {
   }
 }
 
-function goBack() {
-  window.history.back(); // Takes the user back to the previous page
-}
+// Change the goBack function to be globally accessible
+window.goBack = function () {
+  window.history.back();
+};
 
 const callApi = () => {
   console.log("callAPI. API called");
