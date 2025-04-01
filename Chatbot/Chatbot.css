@@ -34,11 +34,19 @@ header {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.title.visible, .subtitle.visible{
+    opacity: 1;
 }
 
 .subtitle {
     color: #645f5f;
     font-size: 1.8rem;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 
 .suggestion-grid {
@@ -151,4 +159,18 @@ header {
     .subtitle {
         font-size: 1.5rem;
     }
+}
+
+.previous-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.previous-icon:hover {
+    opacity: 0.8;
 }

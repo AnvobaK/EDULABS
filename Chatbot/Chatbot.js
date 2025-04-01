@@ -1,3 +1,9 @@
+window.onload = function() {
+    document.querySelector(".title").classList.add("visible");
+    document.querySelector(".subtitle").classList.add("visible");
+};
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const inputField = document.querySelector('.input-field');
     const sendButton = document.querySelector('.send-button');
@@ -43,3 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+function goBack() {
+    window.history.back(); // Takes the user back to the previous page
+}
