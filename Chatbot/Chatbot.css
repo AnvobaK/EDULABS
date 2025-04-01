@@ -175,10 +175,10 @@ header {
   max-height: 400px;
   overflow-y: auto;
   padding: 10px;
-  border: none; /* Remove the border */
   border-radius: 10px;
   margin-bottom: 10px;
   background-color: transparent; /* Make the background transparent */
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -201,7 +201,10 @@ header {
 }
 
 .chat-bubble.ai {
-  background-color: #ffe44b;
+  border-radius: var(--Corner-Large, 16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(14.100000381469727px);
   align-self: flex-start;
   text-align: left;
   color:#05262d;
