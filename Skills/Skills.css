@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 :root {
@@ -706,7 +707,7 @@ img {
 
 /* Footer */
 .footer-background {
-  background-color: var(--dark);
+  background-color: #05262d;
   display: flex;
   width: 100%;
   padding: 40px 20px 0;
