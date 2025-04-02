@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Guides/Guides.css" />
+    <title>Math Guides</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+        const dropdownMenu = document.querySelector(".dropdown-menu");
+
+        dropdownToggle.addEventListener("click", function () {
+          dropdownMenu.classList.toggle("show");
+        });
+
+        window.addEventListener("click", function (e) {
+          if (!dropdownToggle.contains(e.target)) {
+            dropdownMenu.classList.remove("show");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="nav-header">
+      <header class="nav-container">
+        <a href="#" class="logo-link">
+          <img src="../Assets/EduLabs-logo.png" alt="Logo" class="logo-image" />
+        </a>
+        <div class="nav-buttons">
+          <a href="../EduLabs Math/main.html" class="nav-button">
+            <span class="button-text">EduLabs Math</span>
+          </a>
+          <a href="../For Families/ParentsDashboard.html" class="nav-button">
+            <span class="button-text">Parents Dashboard</span>
+          </a>
+          <div class="dropdown">
+            <button class="nav-button dropdown-toggle">Math Resources</button>
+            <div class="dropdown-menu">
+              <a href="../Guides/Guides.html">Guides</a>
+              <a href="../Math Resources/MathResources.html">Math Resources</a>
+              <a href="../Skills/Skills.html">Skills</a>
+              <a href="../AI UI/math-ai-helper.html">AI Helper</a>
+            </div>
+          </div>
+          <a href="../Contact Us/Contact.html" class="nav-button cta-button">
+            <span class="cta-text">Contact Us</span>
+          </a>
+        </div>
+      </header>
+    </nav>
+
+    <section class="math-guides">
+      <div class="content-wrapper">
+        <header class="header-content">
+          <div class="title-container">
+            <h1 class="main-title">Math guides</h1>
+          </div>
+        </header>
+        <div class="description-section">
+          <div class="description-wrapper">
+            <h2 class="subtitle">
+              Discover guides that transform math challenges into achievements
+              with
+              <br />
+              engaging content designed to enhance kids' math skills.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="math-guides-container">
+      <header class="guides-header">
+        <div class="header-content">
+          <div class="header-left">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/e4baa065d7fa490e92e458926e5e4b5a/4500705dfcc58e4c9c764355506ddfa52174cdb5?placeholderIfAbsent=true"
+              alt="Math guides icon"
+              class="header-icon"
+            />
+            <h1 class="header-title">Browse our math guides</h1>
+          </div>
+          <p class="header-description">
+            Learning math doesn't have to be a struggle. At EduLabs, we
+            simplify elementary math concepts, helping your child build
+            confidence and master specific skills. Choose a math topic to
+            explore our comprehensive guides, complete with practice problems to
+            try at home!
+          </p>
+        </div>
+      </header>
+
+      <section class="guides-grid">
+        <article class="guide-card">
+          <h2 class="card-title">Brain teasers for kids</h2>
+          <p class="card-description">
+            If you're trying to get your kids to love math, try out these math
+            brain teasers!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math activities for Kindergarteners</h2>
+          <p class="card-description">
+            Keep your little one entertained and educated with our 25 math
+            activities for kindergarteners!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">New math vs old math</h2>
+          <p class="card-description">
+            Join us as we unpack new math vs old math and explore proprietary
+            data that shows how parents actually feel about the new math method.
+            Read on.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Common Core Math</h2>
+          <p class="card-description">
+            Browse our guide to Common Core math standards from kindergarten
+            through fifth grade to see what your learner needs to know by middle
+            school.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math puzzles for kids</h2>
+          <p class="card-description">
+            Math puzzles for kids are a great way to encourage a love of math,
+            regardless of your child's ability.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Skip counting games</h2>
+          <p class="card-description">
+            Skip counting games can make counting more efficient–and help your
+            student understand multiplication!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Homeschool math curriculum</h2>
+          <p class="card-description">
+            With so many homeschool math curriculum options, picking the right
+            one can be tough. In this guide, we'll help you make the best
+            choice!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math tricks</h2>
+          <p class="card-description">
+            Learning math doesn't have to be a challenge. These math tricks for
+            kids will make mental calculations quick and easy.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Online math tutoring</h2>
+          <p class="card-description">
+            When it comes to online math tutoring for kids, you want to make
+            sure you get the best of the best. Here's where to start!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Game based learning</h2>
+          <p class="card-description">
+            Game-based learning can be an effective educational method for kids.
+            Read on as we explore the pros and cons.
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Why is math important?</h2>
+          <p class="card-description">
+            Math is a foundational skill for many reasons. Read on to dive into
+            the significance of building strong math skills.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math activities for preschoolers</h2>
+          <p class="card-description">
+            Looking for fun math activities for preschoolers? Check out our list
+            of 25 different ideas to try!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Homework stress</h2>
+          <p class="card-description">
+            Does homework cause stress? Effective strategies to reduce homework
+            stress in elementary students from a private tutor & mom of two.
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Why is math hard?</h2>
+          <p class="card-description">
+            Some say it's the most difficult subject in school. Why is math so
+            hard? Let's take a look inside this important subject.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Mental math</h2>
+          <p class="card-description">
+            What is mental math, how can we improve it, and how can we use it to
+            solve the problems before us? Let's take a look!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Common math vocabulary</h2>
+          <p class="card-description">
+            Mastering common math vocabulary makes the rest pretty simple! Let's
+            explore the math terms you're most likely to encounter in class.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Number sense</h2>
+          <p class="card-description">
+            Strong number sense is key to mastering math concepts. Build number
+            sense with these number sense activities from a math teacher &
+            tutor.
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Solving math word problems</h2>
+          <p class="card-description">
+            How do you solve word problems in math? A math tutor shares 8 steps
+            for solving word problems by identifying keywords and showing work.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">How to teach multiplication</h2>
+          <p class="card-description">
+            Learn how to teach multiplication facts with these tips from a math
+            tutor. A guide for parents teaching multiplication at home.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math enrichment activities</h2>
+          <p class="card-description">
+            Math enrichment activities and resources for elementary students,
+            parents, and caregivers. Ideas and strategies from a math teacher &
+            tutor.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">How to make math fun</h2>
+          <p class="card-description">
+            Discover strategies and creative approaches to make math fun for
+            learners of all ages. Transform math from daunting to delightful!
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Learning styles</h2>
+          <p class="card-description">
+            Learning styles allow students to better understand their learning
+            preferences and abilities and work to those strengths.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math board games</h2>
+          <p class="card-description">
+            Math doesn't have to be overwhelming. Many parents make learning fun
+            with math-centered board games tailored to your child's skill level.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">At home learning</h2>
+          <p class="card-description">
+            Tips for parents on how to support at home learning with activities
+            to make learning at home fun. Tips from a tutor, former teacher &
+            mom of two.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Project based learning</h2>
+          <p class="card-description">
+            Project-based learning is all the rage in elementary and middle
+            school classrooms. So what is it and how can you implement it at
+            home?
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Kinesthetic learning</h2>
+          <p class="card-description">
+            Kinesthetic learning is all about getting those hands and bodies
+            moving to make learning engaging and fun for learners with plenty of
+            energy.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">Math strategies</h2>
+          <p class="card-description">
+            Try the best math strategies to make math practice at home more
+            engaging and effective with your children.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="guide-card">
+          <h2 class="card-title">How to learn math</h2>
+          <p class="card-description">
+            Math doesn't have to be a battle. Figuring out how to learn math can
+            be fun and easy with these handy tips.
+          </p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+      </section>
+
+      <article class="guide-card standalone-card">
+        <h2 class="card-title">Benefits of game based learning</h2>
+        <p class="card-description">
+          Game-based learning can be an effective educational method for kids.
+          Read on as we explore the pros and cons.
+        </p>
+      </article>
+    </main>
+
+    <section class="grades-section">
+      <div class="grades-container">
+        <header class="grades-header">
+          <div class="header-content">
+            <div class="icon-wrapper">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/e4baa065d7fa490e92e458926e5e4b5a/b4faa34296ddfeaf7e211c015f89bf4351cb24d2?placeholderIfAbsent=true"
+                alt="Grades icon"
+                class="grades-icon"
+              />
+            </div>
+            <h1 class="grades-title">Grades</h1>
+          </div>
+        </header>
+
+        <div class="grades-description">
+          <p class="description-text">
+            If you've ever wondered how to help your child with math homework or
+            what they should know by the end of fifth grade, these elementary
+            math resources are for you.
+          </p>
+          <p class="description-subtext">
+            Choose a grade level below to browse math skills and objectives by
+            grade.
+          </p>
+        </div>
+
+        <div class="grades-grid">
+          <article class="grade-card">
+            <h2 class="grade-title kindergarten">Kindergarten</h2>
+            <p class="grade-description">
+              A strong start makes all the difference.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title first-grade">1st Grade</h2>
+            <p class="grade-description">
+              Delve into addition and subtraction, measurement and geometric
+              shapes.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title second-grade">2nd Grade</h2>
+            <p class="grade-description">
+              It's time to build on what we've learnt so far and develop
+              mathematical fluency.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title third-grade">3rd Grade</h2>
+            <p class="grade-description">
+              Level up number knowledge with the introduction of multiplication,
+              division and fractions.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title fourth-grade">4th Grade</h2>
+            <p class="grade-description">
+              Classifying, analysing and problem-solving: we're applying all our
+              skills here!
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title fifth-grade">5th Grade</h2>
+            <p class="grade-description">
+              Understanding is extended even further across number, measurement
+              and geometry.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title sixth-grade">6th Grade</h2>
+            <p class="grade-description">
+              Meet ratio, rational numbers and equations – this is where we
+              explore statistical thinking.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title seventh-grade">7th Grade</h2>
+            <p class="grade-description">
+              Children learn more advanced topics like pre-algebra and
+              investigate complex statistics and probability.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title eighth-grade">8th Grade</h2>
+            <p class="grade-description">
+              Introduce problems involving shape, scale drawings, population
+              samples and more.
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+
+          <article class="grade-card">
+            <h2 class="grade-title homeschool">Homeschool<br />resources</h2>
+            <p class="grade-description">
+              Boost your homeschooler's math confidence instantly!
+            </p>
+            <a href="#" class="view-lessons">View Lessons</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <section class="company-info">
+          <img src="../Assets/EduLabs-logo.png" alt="EduLabs Logo" class="footer-logo" />
+          <p class="company-description">
+            EduLabs Learning is part of Discovery Education.
+          </p>
+          <p class="support-contact">
+            <span>Support:</span>
+            <a href="tel:18774517845" class="support-phone">1 (877) 451-7845</a>
+          </p>
+        </section>
+        <section class="quick-links">
+          <h3 class="links-heading">Quick Links</h3>
+          <ul class="links-list">
+            <a href="../EduLabs Math/main.html">
+              <li class="link-item">EduLabs Math</li>
+            </a>
+            <a href="../For Families/ParentsDashboard.html">
+              <li class="link-item">Parent Dashboard</li>
+            </a>
+            <a href="../Math Resources/MathResources.html">
+              <li class="link-item">Math Resources</li>
+            </a>
+          </ul>
+        </section>
+      </div>
+    </footer>
+
+  </body>
+</html>

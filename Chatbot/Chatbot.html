@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Helper</title>
-    <link rel="stylesheet" href="Chatbot.css" />
+    <link rel="stylesheet" href="../Chatbot/Chatbot.css" />
     <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <script type="module" src="Chatbot.js"></script>
   </head>
 
   <body>
@@ -19,12 +20,8 @@
         <p class="subtitle">How can I help you today?</p>
       </header>
 
-      <!-- Add chat history container -->
-      <div class="chat-history" id="chatHistory">
-        <!-- Chat messages will appear here -->
-      </div>
-
-      <div class="suggestion-grid" id="suggestionGrid">
+      <!-- Suggestion grid to be dynamically replaced -->
+      <div class="suggestion-grid">
         <div class="suggestion-column">
           <div class="card">
             <div class="card-title">Explain the concept of</div>
@@ -39,27 +36,20 @@
 
         <div class="suggestion-column">
           <div class="card">
-            <div class="card-title">Explain why the division of any</div>
-            <div class="card-subtitle">number by 0 is impossible</div>
-          </div>
-
-          <div class="card">
             <div class="card-title">Evaluate</div>
             <div class="card-subtitle">2x + 5 = 10</div>
           </div>
-        </div>
-
-        <div class="suggestion-column">
-          <div class="card">
-            <div class="card-title">What is the square root</div>
-            <div class="card-subtitle">of 225?</div>
-          </div>
 
           <div class="card">
             <div class="card-title">What is the square root</div>
             <div class="card-subtitle">of 225?</div>
           </div>
         </div>
+      </div>
+
+      <!-- Chat container (hidden initially) -->
+      <div class="chat-container" style="display: none">
+        <!-- Chat messages will be dynamically added here -->
       </div>
 
       <div class="input-container">
@@ -71,13 +61,11 @@
           placeholder="Ask anything from here"
           class="input-field"
         />
-        <button class="send-button">
+        <button onclick="sendMessage()" class="send-button">
           <i class="fas fa-paper-plane"></i>
         </button>
       </div>
     </div>
-
-    <script src="Chatbot.js"></script>
 
     <img
       src="../Assets/left-arrow.png"

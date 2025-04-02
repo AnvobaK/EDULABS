@@ -1,12 +1,85 @@
-// Your Hugging Face API token - you should store this securely in a production environment
-const HF_API_TOKEN = "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"; // Replace with your actual token
-// Change this line in your Chatbot.js file
-const HF_API_URL =
-  "https://api-inference.huggingface.co/deepset/roberta-base-squad2"; // More accessible model
+// Import the module using a CDN for browser compatibility
+import { HfInference } from "https://cdn.jsdelivr.net/npm/@huggingface/inference@2.6.1/+esm";
+
+let client;
+
+async function initializeClient() {
+  try {
+    client = new HfInference("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");
+    console.log("Hugging Face client initialized");
+  } catch (error) {
+    console.error("Error initializing client:", error);
+  }
+}
+
+// Initialize the client before anything else
+await initializeClient();
 
 window.onload = function () {
-  document.querySelector(".title").classList.add("visible");
-  document.querySelector(".subtitle").classList.add("visible");
+  const title = document.querySelector(".title");
+  const subtitle = document.querySelector(".subtitle");
+
+  if (title && subtitle) {
+    title.classList.add("visible");
+    subtitle.classList.add("visible");
+  }
+};
+
+// Define isMathProblem globally
+function isMathProblem(message) {
+  // Basic check for math problems (e.g., contains numbers and operators)
+  return /[\d+\-*/^=]/.test(message);
+}
+
+// Make sendMessage available globally
+window.sendMessage = async function () {
+  const inputField = document.querySelector(".input-field");
+  const chatContainer = document.querySelector(".chat-container");
+  const suggestionGrid = document.querySelector(".suggestion-grid");
+  const message = inputField.value.trim();
+
+  if (message && client) {
+    // Replace the suggestion grid with the chat container if not already done
+    if (suggestionGrid.style.display !== "none") {
+      suggestionGrid.style.display = "none";
+      chatContainer.style.display = "flex";
+    }
+
+    // Add user's message as a chat bubble
+    const userBubble = document.createElement("div");
+    userBubble.className = "chat-bubble user";
+    userBubble.textContent = message;
+    chatContainer.appendChild(userBubble);
+
+    // Add AI's temporary response bubble
+    const aiBubble = document.createElement("div");
+    aiBubble.className = "chat-bubble ai";
+    aiBubble.textContent = "Thinking...";
+    chatContainer.appendChild(aiBubble);
+
+    try {
+      const response = await client.textGeneration({
+        model: "Qwen/QwQ-32B",
+        inputs: message,
+        parameters: {
+          max_new_tokens: 500,
+          return_full_text: false,
+        },
+      });
+
+      // Update AI bubble with the response
+      aiBubble.textContent = response.generated_text;
+    } catch (error) {
+      console.error("Error getting AI response:", error);
+      aiBubble.textContent = "Sorry, I couldn't process your request.";
+    }
+
+    // Scroll to the bottom of the chat container
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    // Clear the input field
+    inputField.value = "";
+  }
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,19 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const sendButton = document.querySelector(".send-button");
   const micButton = document.querySelector(".mic-button");
   const cards = document.querySelectorAll(".card");
-  const chatHistory = document.getElementById("chatHistory");
-  const suggestionGrid = document.getElementById("suggestionGrid");
-
-  // Create typing indicator
-  const typingIndicator = document.createElement("div");
-  typingIndicator.className = "typing-indicator";
-  typingIndicator.innerHTML = "<span></span><span></span><span></span>";
-  chatHistory.appendChild(typingIndicator);
 
   // Handle send button click
-  sendButton.addEventListener("click", function () {
-    sendMessage();
-  });
+  sendButton.addEventListener("click", sendMessage);
 
   // Handle enter key press in input field
   inputField.addEventListener("keypress", function (e) {
@@ -37,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Handle microphone button click
   micButton.addEventListener("click", function () {
-    // In a real implementation, this would trigger speech recognition
     alert("Voice input feature would be activated here");
   });
 
@@ -47,110 +109,42 @@ document.addEventListener("DOMContentLoaded", function () {
       const title = this.querySelector(".card-title").textContent;
       const subtitle = this.querySelector(".card-subtitle").textContent;
       inputField.value = `${title} ${subtitle}`.trim();
-      // Optional: Auto-send the message
-      // sendMessage();
     });
   });
-
-  async function sendMessage() {
-    const message = inputField.value.trim();
-    if (message) {
-      // Show chat history if it's the first message
-      if (!chatHistory.classList.contains("active")) {
-        chatHistory.classList.add("active");
-        suggestionGrid.classList.add("hidden");
-      }
-
-      // Add user message to chat
-      addMessageToChat(message, "user");
-
-      // Clear input field
-      inputField.value = "";
-
-      // Show typing indicator
-      typingIndicator.classList.add("active");
-
-      try {
-        // Call Hugging Face API
-        const response = await fetchHuggingFaceResponse(message);
-
-        // Hide typing indicator
-        typingIndicator.classList.remove("active");
-
-        // Add AI response to chat
-        addMessageToChat(response, "ai");
-
-        // Scroll to bottom of chat
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-      } catch (error) {
-        console.error("Error:", error);
-
-        // Hide typing indicator
-        typingIndicator.classList.remove("active");
-
-        // Add error message to chat
-        addMessageToChat(
-          "Sorry, I encountered an error. Please try again.",
-          "ai"
-        );
-      }
-    }
-  }
-
-  function addMessageToChat(text, sender) {
-    const messageElement = document.createElement("div");
-    messageElement.className = `message ${sender}-message`;
-    messageElement.textContent = text;
-
-    // Insert before typing indicator
-    chatHistory.insertBefore(messageElement, typingIndicator);
-
-    // Scroll to bottom of chat
-    chatHistory.scrollTop = chatHistory.scrollHeight;
-  }
-
-  async function fetchHuggingFaceResponse(message) {
-    try {
-      const response = await fetch(HF_API_URL, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${HF_API_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          inputs: message,
-          parameters: {
-            max_new_tokens: 250,
-            temperature: 0.7,
-            top_p: 0.9,
-            do_sample: true,
-          },
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      // Extract the generated text from the response
-      // The exact format depends on the model being used
-      if (Array.isArray(data) && data.length > 0 && data[0].generated_text) {
-        return data[0].generated_text;
-      } else if (data.generated_text) {
-        return data.generated_text;
-      } else {
-        console.log("Unexpected response format:", data);
-        return "I received your message, but I'm having trouble formulating a response.";
-      }
-    } catch (error) {
-      console.error("Error calling Hugging Face API:", error);
-      throw error;
-    }
-  }
 });
 
-function goBack() {
-  window.history.back(); // Takes the user back to the previous page
+async function solveMathProblem(problem) {
+  try {
+    const url = `http://localhost:3000/solve?problem=${encodeURIComponent(
+      problem
+    )}`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.queryresult && data.queryresult.success) {
+      const pods = data.queryresult.pods;
+      const solutionPod = pods.find(
+        (pod) => pod.title === "Result" || pod.title === "Exact result"
+      );
+      if (solutionPod) {
+        return solutionPod.subpods[0].plaintext;
+      } else {
+        return "Solution not found.";
+      }
+    } else {
+      return "Unable to solve the problem.";
+    }
+  } catch (error) {
+    console.error("Error solving math problem:", error);
+    return "Error solving the problem.";
+  }
 }
+
+// Change the goBack function to be globally accessible
+window.goBack = function () {
+  window.history.back();
+};
+
+const callApi = () => {
+  console.log("callAPI. API called");
+};
