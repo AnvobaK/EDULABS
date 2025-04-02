@@ -333,13 +333,13 @@ body {
 }
 
 /* Rest of your existing styles */
-.dreambox-section {
+.EduLabs-section {
   padding: 100px 360px;
   background-image: url(../Assets/kenny-eliason-zFSo6bnZJTw-unsplash.jpg);
   background-size: cover;
   position: relative;
 }
-.dreambox-section::before {
+.EduLabs-section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -356,13 +356,13 @@ body {
 }
 
 /* Ensure text appears above the overlay */
-.dreambox-section * {
+.EduLabs-section * {
   position: relative;
   z-index: 2;
   color: white; /* Change text color if necessary */
 }
 
-.dreambox-container {
+.EduLabs-container {
   display: flex;
   gap: 64px;
   position: relative;
@@ -373,7 +373,7 @@ body {
   flex: 1;
 }
 
-.dreambox-logo {
+.EduLabs-logo {
   width: 250px;
   margin-bottom: 12px;
 }
@@ -390,7 +390,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 18px;
   line-height: 2;
-  color: var(--text-dark);
+  color: var(--text-dark) white;
   margin-bottom: 20px;
 }
 
@@ -412,14 +412,14 @@ body {
   background-color: var(--primary-hover);
 }
 
-/* DreamBox Products Section Styles */
-.dreambox-products-section {
+/* EduLabs Products Section Styles */
+.EduLabs-products-section {
   padding: 60px 20px;
   background-color: var(--background);
   position: relative;
 }
 
-.dreambox-products-container {
+.EduLabs-products-container {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -536,7 +536,7 @@ body {
 
 /* Media Queries */
 @media (max-width: 991px) {
-  .dreambox-products-section {
+  .EduLabs-products-section {
     padding: 40px 20px;
   }
 
@@ -561,7 +561,7 @@ body {
 }
 
 @media (max-width: 576px) {
-  .dreambox-products-section {
+  .EduLabs-products-section {
     padding: 30px 15px;
   }
 
@@ -642,11 +642,11 @@ body {
 
 /* Media Queries */
 @media (max-width: 991px) {
-  .dreambox-section {
+  .EduLabs-section {
     padding: 20px;
   }
 
-  .dreambox-container {
+  .EduLabs-container {
     flex-direction: column;
   }
 
@@ -728,6 +728,7 @@ body {
   }
 }
 
+/* Instructional Section */
 .instructional-section {
   padding: 50px 360px;
 }
@@ -762,12 +763,12 @@ body {
   color: var(--text-dark);
 }
 
-.section-description {
+.instruction-description {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 2;
   margin-bottom: 20px;
-  color: white;
+  color: black;
 }
 
 .image-container {
@@ -871,110 +872,7 @@ body {
   background-color: var(--primary-hover);
 }
 
-/* Grade Selection Component Styles */
-.grade-selection {
-  padding: 50px 360px;
-  background-color: var(--secondary);
-}
-
-.grade-selection-container {
-  display: flex;
-  gap: 64px;
-}
-
-.grade-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 154px);
-  gap: 16px;
-}
-
-.grade-card {
-  border-radius: 22px;
-  padding: 17px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(5, 38, 45, 0.5);
-  background-color: var(--white);
-  display: flex;
-  flex-direction: column;
-}
-
-.grade-letter {
-  font-size: 50px;
-  font-weight: 600;
-  color: var(--text-light);
-}
-
-.grade-name {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-top: 10px;
-}
-
-.kindergarten {
-  background-color: var(--primary);
-}
-
-.kindergarten .grade-letter,
-.kindergarten .grade-name {
-  color: var(--white);
-}
-
-.alignment-section {
-  flex: 1;
-}
-
-.alignment-title {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: var(--text-dark);
-}
-
-.alignment-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  list-style-type: none;
-}
-
-.alignment-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.checkbox-img {
-  width: 31px;
-  height: 31px;
-}
-
-.alignment-text {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-/* Media Queries */
-@media (max-width: 991px) {
-  .grade-selection {
-    padding: 20px;
-  }
-
-  .grade-selection-container {
-    flex-direction: column;
-  }
-
-  .grade-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .grade-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* Benefits Section */
 .benefits-section {
   background-color: rgba(11, 88, 104, 1);
   display: flex;
@@ -1106,181 +1004,6 @@ body {
   }
 }
 
-/* Curriculum Section*/
-.curriculum-section {
-  display: flex;
-  width: 100%;
-  padding: 10px;
-  flex-direction: column;
-  align-items: center;
-}
-
-.curriculum-header {
-  width: 100%;
-  max-width: 1900px;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-title {
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 28px;
-  color: #024170;
-  font-weight: 900;
-  text-align: center;
-  padding: 1px 0 2px;
-}
-
-.curriculum-description {
-  margin-top: 20px;
-  width: 948px;
-  max-width: 100%;
-  padding-bottom: 24px;
-}
-
-.description-text {
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
-  font-size: 24px;
-  color: #024170;
-  font-weight: 400;
-  text-align: center;
-  line-height: 28px;
-  padding: 0 30px;
-}
-
-.grade-cards-container {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 1900px;
-  padding: 0 80px;
-  display: flex;
-  flex-direction: column;
-}
-
-.grade-cards-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  font-family: Arial, -apple-system, Roboto, Helvetica, sans-serif;
-}
-
-.grade-card {
-  border-radius: 12px;
-  background-color: #fff;
-  min-height: 228px;
-  padding: 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-width: 200px;
-}
-
-.grade-title {
-  font-size: 17px;
-  font-weight: 700;
-  padding: 2px 0 3px;
-}
-
-.grade-description {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #000;
-  line-height: 21px;
-}
-
-.view-lessons {
-  margin-top: 20px;
-  color: #00607a;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-/* Grade specific colors */
-.kindergarten {
-  color: #ecc638;
-}
-
-.first-grade {
-  color: #0369b8;
-}
-
-.second-grade {
-  color: #24aace;
-}
-
-.third-grade {
-  color: #c76659;
-}
-
-.fourth-grade {
-  color: #7e55dc;
-}
-
-.fifth-grade {
-  color: #82b804;
-}
-
-.sixth-grade {
-  color: #b22a61;
-}
-
-.seventh-grade {
-  color: #5043ba;
-}
-
-.eighth-grade {
-  color: #121487;
-}
-
-.homeschool {
-  color: #c825c0;
-}
-
-.additional-cards {
-  align-self: center;
-  margin-top: 20px;
-  width: 420px;
-  max-width: 100%;
-  display: flex;
-  gap: 20px;
-}
-
-.additional-cards .grade-card {
-  min-height: 207px;
-  width: 50%;
-}
-
-/* Responsive styles */
-@media (max-width: 991px) {
-  .curriculum-section {
-    max-width: 100%;
-  }
-
-  .curriculum-header {
-    max-width: 100%;
-  }
-
-  .description-text {
-    padding: 0 20px;
-  }
-
-  .grade-cards-container {
-    padding: 0 20px;
-  }
-
-  .additional-cards {
-    flex-direction: column;
-  }
-
-  .additional-cards .grade-card {
-    width: 100%;
-    margin-top: 20px;
-  }
-}
 
 /* Device Compatibility Section*/
 .device-compatibility {
@@ -1786,6 +1509,10 @@ body {
   color: #00607a;
   font-size: 14px;
   text-decoration: none;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 991px) {
