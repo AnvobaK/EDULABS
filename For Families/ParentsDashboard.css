@@ -838,8 +838,9 @@ img {
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2rem;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 .footer-about {
