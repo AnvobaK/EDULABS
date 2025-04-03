@@ -721,6 +721,29 @@ img {
 
 .footer-about {
   max-width: 400px;
+  margin: auto;
+  text-align: left;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.footer-contact p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  padding-right: 145px;
+}
+.footer-contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+.footer-contact a:hover {
+  text-decoration: underline;
 }
 
 .footer-logo {
@@ -904,4 +927,13 @@ img {
   .card-content {
     padding: 1rem;
   }
+}
+.footer-links-column a {
+  text-decoration: none;
+  list-style: none;
+}
+.footer-links-column ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

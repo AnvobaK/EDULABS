@@ -160,7 +160,7 @@
           <div class="product-card">
             <div class="product-header math-header">
               <img
-                src="../Assets/11zon_resized.jfif"
+                src="../Assets/EDUMATHS.png"
                 alt="EduLabs Math"
                 class="product-logo"
                 height="70px"
@@ -200,7 +200,7 @@
           <div class="product-card">
             <div class="product-header reading-header">
               <img
-                src="../Assets/hitesh-choudhary-t1PaIbMTJIM-unsplash.jpg"
+                src="../Assets/11zon_resized.png"
                 alt="AI Helper"
                 class="product-logo"
               />
@@ -739,7 +739,11 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-about">
-            <img src="../Assets/EduLabs-logo.png" alt="EduLabs Logo" class="footer-logo" />
+            <img
+              src="../Assets/EduLabs-logo.png"
+              alt="EduLabs Logo"
+              class="footer-logo"
+            />
             <p>
               Empowering students with innovative educational solutions that
               make learning math engaging, accessible, and effective.
@@ -758,7 +762,9 @@
                 <li><a href="../EduLabs Math/main.html">Home</a></li>
                 <li><a href="../About/About.html">About Us</a></li>
                 <li><a href="#">Programs</a></li>
-                <li><a href="../Math Resources/MathResources.html">Resources</a></li>
+                <li>
+                  <a href="../Math Resources/MathResources.html">Resources</a>
+                </li>
                 <li><a href="../Contact Us/Contact.html">Contact</a></li>
               </ul>
             </div>
@@ -766,21 +772,33 @@
               <h3>Resources</h3>
               <ul>
                 <li><a href="../Guides/Guides.html">Math Guides</a></li>
-                <li><a href="../Practice Problems/Practice.html">Practice Problems</a></li>
-                <li><a href="../Video Tutorials/video.html">Video Tutorials</a></li>
+                <li>
+                  <a href="../Practice Problems/Practice.html"
+                    >Practice Problems</a
+                  >
+                </li>
+                <li>
+                  <a href="../Video Tutorials/video.html">Video Tutorials</a>
+                </li>
                 <li><a href="../AI UI/math-ai-helper.html">AI Helper</a></li>
-                <li><a href="../For Families/ParentsDashboard.html">Parent Resources</a></li>
+                <li>
+                  <a href="../For Families/ParentsDashboard.html"
+                    >Parent Resources</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2023 EduLabs. All rights reserved.</p>
-          <div class="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
+          <p>&copy; <span id="year"></span> EduLabs. All rights reserved.</p>
         </div>
+
+        <script>
+          // Get the current year and insert it into the span
+          document.getElementById("year").textContent =
+            new Date().getFullYear();
+        </script>
       </div>
     </footer>
   </body>
