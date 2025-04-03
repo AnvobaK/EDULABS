@@ -842,6 +842,11 @@ img {
   margin-bottom: 2rem;
 }
 
+.footer-container {
+  display: grid;
+  place-items: center;
+}
+
 .footer-about {
   max-width: 400px;
   margin: auto;
